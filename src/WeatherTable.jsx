@@ -12,16 +12,7 @@ function WeatherTable({ position }) {
             {error && <Error message={error} />}
             {!loading && !error && (
                 <div className="w-full text-sky-500 bg-white mb-1 rounded-4xl shadow-xl py-3 px-5">
-                    <div className="flex w-full border-b items-center justify-between">
-                        <div>7-days Forecast</div>
-                        <ClipLoader
-                            color={"#00a6f4"}
-                            loading={loading}
-                            size={20}
-                            aria-label="Loading Spinner"
-                            data-testid="loader"
-                        />
-                    </div>
+                    <div className="w-full border-b">7-days Forecast</div>
 
                     <table className="w-full table-auto text-center ">
                         <thead>
