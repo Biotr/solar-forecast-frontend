@@ -13,7 +13,7 @@ const formatTime = seconds => {
 
 function WeatherSummary({ position }) {
     const { data, loading, error } = useFetchApi(
-        `http://localhost:8000/summary?latitude=${position.lat}&longitude=${position.lng}`
+        `https://solar-forecast-backend-91fr.onrender.com/summary?latitude=${position.lat}&longitude=${position.lng}`
     )
     return (
         <>

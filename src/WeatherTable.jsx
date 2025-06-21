@@ -4,7 +4,7 @@ import { useFetchApi } from "./useFetchApi"
 
 function WeatherTable({ position }) {
     const { data, loading, error } = useFetchApi(
-        `http://localhost:8000/dailyforecast?latitude=${position.lat}&longitude=${position.lng}&power=2.5&efficiency=0.2`
+        `https://solar-forecast-backend-91fr.onrender.com/dailyforecast?latitude=${position.lat}&longitude=${position.lng}&power=2.5&efficiency=0.2`
     )
 
     return (
