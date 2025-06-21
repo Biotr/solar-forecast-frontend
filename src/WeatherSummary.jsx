@@ -1,5 +1,6 @@
 import { useFetchApi } from "./useFetchApi"
 import Error from "./Error"
+import { ClipLoader } from "react-spinners"
 
 const formatTime = seconds => {
     const h = Math.floor(seconds / 3600)
@@ -19,10 +20,19 @@ function WeatherSummary({ position }) {
         <>
             {error && <Error message={error} />}
             {!loading && !error && (
-                <div className="w-full text-sky-500 bg-white mb-1 rounded-4xl shadow-xl py-3 px-9">
-                    <div className="w-full border-b">
-                        7-days Summary - {data["weather_status"]}
+                <div className="w-full text-sky-500 bg-white mb-1 rounded-4xl shadow-xl py-3 px-5">
+                    <div className="flex w-full border-b items-center justify-between">
+                        <div>7-days Summary - {data["weather_status"]}</div>
+
+                        <ClipLoader
+                            color={"#00a6f4"}
+                            loading={loading}
+                            size={20}
+                            aria-label="Loading Spinner"
+                            data-testid="loader"
+                        />
                     </div>
+
                     <div className="flex flex-wrap sm:flex-nowrap w-full text-center items-center">
                         <div className="flex-1 ">
                             <div className="text-sky-300">Pressure</div>
