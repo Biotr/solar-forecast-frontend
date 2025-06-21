@@ -6,20 +6,14 @@ import {
     useMapEvents,
 } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
-import L from "leaflet"
 import { useEffect } from "react"
+import icon from "leaflet/dist/images/marker-icon.png"
+import iconShadow from "leaflet/dist/images/marker-shadow.png"
 
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png"
-import markerIcon from "leaflet/dist/images/marker-icon.png"
-import markerShadow from "leaflet/dist/images/marker-shadow.png"
-
-// Naprawa domyślnych ikon
-delete L.Icon.Default.prototype._getIconUrl
-
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl: markerIcon2x,
-    iconUrl: markerIcon,
-    shadowUrl: markerShadow,
+const markerProp = new L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconAnchor: [17, 40],
 })
 
 function ClickHandler({ setPosition }) {
@@ -61,7 +55,7 @@ function LocationMap({ lat, lng, onSetPosition }) {
             />
             <MapUpdater position={{ lat, lng }} />
             <ClickHandler setPosition={onSetPosition} />
-            <Marker position={[lat, lng]} />
+            <Marker position={[lat, lng]} icon={markerProp} />
         </MapContainer>
     )
 }
