@@ -6,7 +6,15 @@ import {
     useMapEvents,
 } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
+import L from "leaflet"
 import { useEffect } from "react"
+import icon from "leaflet/dist/images/marker-icon.png"
+import iconShadow from "leaflet/dist/images/marker-shadow.png"
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+})
 
 function ClickHandler({ setPosition }) {
     useMapEvents({
@@ -47,7 +55,7 @@ function LocationMap({ lat, lng, onSetPosition }) {
             />
             <MapUpdater position={{ lat, lng }} />
             <ClickHandler setPosition={onSetPosition} />
-            <Marker position={[lat, lng]} />
+            <Marker position={[lat, lng]} icon={DefaultIcon} />
         </MapContainer>
     )
 }
