@@ -6,6 +6,7 @@ In the application, users can either enter latitude and longitude manually or se
 - estimated potential solar energy production
 - summary of the 7-day weather, including min and max temperature, average values for pressure and sunshine duration
 
+The application is available at [Solar Forecast](https://solar-forecast-frontend.onrender.com/)
 ## Todo:
 - create efficiency, power inputs
 - handle loading
