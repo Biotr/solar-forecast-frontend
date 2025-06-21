@@ -1,12 +1,13 @@
-# React + Vite
+# Solar Forecast
+Solar Frontend is a weather and solar energy forecast application, built as part of an internship assignment.
+The app is developed using React + Vite and integrates with an [solar-forecast-weather](https://github.com/Biotr/solar-forecast-backend) API.
+In the application, users can either enter latitude and longitude manually or set a marker on the map to retrieve a 7-day forecast, which includes:
+- maximum and minimum daily temperatures
+- estimated potential solar energy production
+- summary of the 7-day weather, including min and max temperature, average values for pressure and sunshine duration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Todo:
+- create efficiency, power inputs
+- handle loading
+- create find city input
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
