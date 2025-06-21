@@ -1,7 +1,7 @@
 import WeatherRow from "./WeatherRow"
 import Error from "./Error"
 import { useFetchApi } from "./useFetchApi"
-import { ClipLoader } from "react-spinners"
+
 function WeatherTable({ position }) {
     const { data, loading, error } = useFetchApi(
         `https://solar-forecast-backend-91fr.onrender.com/dailyforecast?latitude=${position.lat}&longitude=${position.lng}&power=2.5&efficiency=0.2`

@@ -1,6 +1,5 @@
 import { useFetchApi } from "./useFetchApi"
 import Error from "./Error"
-import { ClipLoader } from "react-spinners"
 
 const formatTime = seconds => {
     const h = Math.floor(seconds / 3600)

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import LocationInput from "./LocationInput"
 import LocationMap from "./LocationMap"
 import WeatherSummary from "./WeatherSummary"
 import WeatherTable from "./WeatherTable"
+
 function App({ latitude, longitude }) {
     const [position, setPosition] = useState({ lat: latitude, lng: longitude })
     return (
