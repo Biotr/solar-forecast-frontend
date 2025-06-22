@@ -26,12 +26,11 @@ function WeatherSummary({ position }) {
                             <ClipLoader color="#00a6f4"/>
                         </div>
                     )}
-                    {!loading&&(
+                    {!loading && (
                         <>
                             <div className="flex w-full border-b items-center justify-between">
                                 <div>
-                                    7-days Summary -{" "}
-                                    {!loading && data["weather_status"]}
+                                    7-days Summary -{` ${data["weather_status"]}`}
                                 </div>
                             </div>
 

@@ -17,7 +17,7 @@ function WeatherTable({ position }) {
                             <ClipLoader color="#00a6f4"/>
                         </div>
                     )}
-                    {!loading &&(
+                    {!loading && (
                         <>
                             <div className="w-full border-b">7-days Forecast</div>
                             <table className="w-full table-auto text-center ">
