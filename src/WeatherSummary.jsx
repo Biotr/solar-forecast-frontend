@@ -1,5 +1,6 @@
 import { useFetchApi } from "./useFetchApi"
 import Error from "./Error"
+import { ClipLoader } from "react-spinners"
 
 const formatTime = seconds => {
     const h = Math.floor(seconds / 3600)
@@ -18,37 +19,46 @@ function WeatherSummary({ position }) {
     return (
         <>
             {error && <Error message={error} />}
-            {!loading && !error && (
-                <div className="w-full text-sky-500 bg-white mb-1 rounded-4xl shadow-xl py-3 px-5">
-                    <div className="flex w-full border-b items-center justify-between">
-                        <div>
-                            7-days Summary -{" "}
-                            {!loading && data["weather_status"]}
+            {!error && (
+                <div className="w-full text-sky-500 bg-white text-center mb-1 rounded-4xl shadow-xl py-3 px-5">
+                    {loading && (
+                        <div className="text-center">
+                            <ClipLoader color="#00a6f4"/>
                         </div>
-                    </div>
+                    )}
+                    {!loading&&(
+                        <>
+                            <div className="flex w-full border-b items-center justify-between">
+                                <div>
+                                    7-days Summary -{" "}
+                                    {!loading && data["weather_status"]}
+                                </div>
+                            </div>
 
-                    <div className="flex flex-wrap sm:flex-nowrap w-full text-center items-center">
-                        <div className="flex-1 ">
-                            <div className="text-sky-300">Pressure</div>
-                            <div>{data["average_pressure"]} hPa</div>
-                        </div>
-                        <div className="flex-1 ">
-                            <div className="text-sky-300">Max Temperature</div>
-                            <div>{Math.floor(data["max_temperature"])}°C</div>
-                        </div>
-                        <div className="flex-1">
-                            <div className=" text-sky-300">Min Temperature</div>
-                            <div>{Math.floor(data["min_temperature"])}°C</div>
-                        </div>
-                        <div className="flex-1">
-                            <div className="text-sky-300">
-                                Average Sunshine Duration
+                            <div className="flex flex-wrap sm:flex-nowrap w-full text-center items-center">
+                                <div className="flex-1 ">
+                                    <div className="text-sky-300">Pressure</div>
+                                    <div>{data["average_pressure"]} hPa</div>
+                                </div>
+                                <div className="flex-1 ">
+                                    <div className="text-sky-300">Max Temperature</div>
+                                    <div>{Math.floor(data["max_temperature"])}°C</div>
+                                </div>
+                                <div className="flex-1">
+                                    <div className=" text-sky-300">Min Temperature</div>
+                                    <div>{Math.floor(data["min_temperature"])}°C</div>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="text-sky-300">
+                                        Average Sunshine Duration
+                                    </div>
+                                    <div>
+                                        {formatTime(data["average_sunshine_duration"])}
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                {formatTime(data["average_sunshine_duration"])}
-                            </div>
-                        </div>
-                    </div>
+                        </>
+                    )}
                 </div>
             )}
         </>
