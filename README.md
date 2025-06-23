@@ -7,6 +7,11 @@ In the application, users can either enter latitude and longitude manually or se
 - summary of the 7-day weather, including min and max temperature, average values for pressure and sunshine duration
 
 The application is available at [Solar Forecast](https://solar-forecast-frontend.onrender.com/)
+
+### Important info
+Please give some time for app to load as render says:
+`Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
+
 ## Todo:
 - create efficiency, power inputs
 - handle loading
