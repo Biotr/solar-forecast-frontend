@@ -9,7 +9,7 @@ In the application, users can either enter latitude and longitude manually or se
 The application is available at [Solar Forecast](https://solar-forecast-frontend.onrender.com/)
 
 ### Important info
-Please give some time for app to load as render says:
+Please give some time for app to load as render says: <br/>
 `Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
 
 ## Todo:
