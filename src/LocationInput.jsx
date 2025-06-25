@@ -12,18 +12,18 @@ function LocationInput({ lat, lng, onSetPosition }) {
     const handleSubmit = e => {
         e.preventDefault()
         if (!latValue || !lngValue) return
-        let myLat = latValue
-        let myLng = lngValue
+        let currentLat = latValue
+        let currentLng = lngValue
 
-        if (latValue > 90) myLat = 90
-        else if (latValue < -90) myLat = -90
+        if (latValue > 90) currentLat = 90
+        else if (latValue < -90) currentLat = -90
 
-        if (lngValue > 180) myLng = 180
-        else if (lngValue < -180) myLng = -180
+        if (lngValue > 180) currentLng = 180
+        else if (lngValue < -180) currentLng = -180
 
-        setLatValue(myLat)
-        setLngValue(myLng)
-        onSetPosition({ lat: parseFloat(myLat), lng: parseFloat(myLng) })
+        setLatValue(currentLat)
+        setLngValue(currentLng)
+        onSetPosition({ lat: parseFloat(currentLat), lng: parseFloat(currentLng) })
     }
 
     return (
