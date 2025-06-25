@@ -36,8 +36,8 @@ function WeatherTable({ position }) {
                                             key={id}
                                             date={data["time"][id]}
                                             weatherCode={data["weather_code"][id]}
-                                            maxTemp={data["min_temperature"][id]}
-                                            minTemp={data["max_temperature"][id]}
+                                            maxTemp={data["max_temperature"][id]}
+                                            minTemp={data["min_temperature"][id]}
                                             energy={data["energy"][id]}
                                         />
                                     ))}
